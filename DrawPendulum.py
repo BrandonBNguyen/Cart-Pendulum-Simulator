@@ -3,13 +3,15 @@ import math
 from time import sleep
 
 
-class DrawPendulum():
+class DrawPendulum:
 
     def __init__(self, main_window_canvas, length, scale=800):
         self.scale = scale  # Represents the number of pixel lengths per meter
 
         # Get and configure window
-        self.win = turtle.RawTurtle(main_window_canvas).getscreen()
+        first_turtle = turtle.RawTurtle(main_window_canvas)
+        first_turtle.hideturtle()
+        self.win = first_turtle.getscreen()
         self.win.bgcolor("black")
         self.win.tracer(0)
 

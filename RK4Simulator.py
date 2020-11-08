@@ -1,5 +1,4 @@
 import math
-import numpy as np
 
 
 class RK4Simulator:

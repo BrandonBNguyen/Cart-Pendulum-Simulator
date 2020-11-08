@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import re
 from SimulatorWindow import SimulatorWindow
+import sys
 
 
 class MainWindow:
@@ -333,8 +334,8 @@ class MainWindow:
 
     def close_command(self):
         self.simulator_window.close()
-        print('quitting')
         self.root.quit()
+        sys.exit()
 
 
 if __name__ == "__main__":

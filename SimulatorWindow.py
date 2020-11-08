@@ -4,7 +4,6 @@ import math
 from RK4Simulator import RK4Simulator
 import numpy as np
 import time
-import sys
 
 
 class SimulatorWindow:
@@ -43,7 +42,6 @@ class SimulatorWindow:
         self.end_program = True
         if self.not_running.is_set():
             self.not_running.clear()
-            sys.exit()
         else:
             self.not_running.set()
 
