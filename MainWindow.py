@@ -107,7 +107,8 @@ class MainWindow:
         self.end_time_boolean = tk.BooleanVar()
         self.end_time_boolean.set(True)
         end_time_checkbox = tk.Checkbutton(self.frame['Simulation Properties'], text="Simulate only up to end time.",
-                                           variable=self.end_time_boolean, command=self.enable_disable_end_time)
+                                           variable=self.end_time_boolean,
+                                           command=lambda: self.enable_disable_end_time())
 
         # Create buttons
         self.button_apply = tk.Button(self.root, text="Apply", command=self.apply, pady=4, padx=7)
@@ -181,7 +182,7 @@ class MainWindow:
         if self.verify_inputs(False):
             self.apply()
 
-    def display_forcing_settings(self, *args):
+    def display_forcing_settings(self):
         if self.forcing_type_variable.get() == 'Sinusoidal':
             # If forcing type is set to 'Sinusoidal', display forcing inputs
             self.input_elements['Forcing amplitude']['label'].grid(row=1, column=0, pady=4, sticky='E')
