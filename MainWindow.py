@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import re
+from SimulatorWindow import SimulatorWindow
 
 
 class MainWindow:
@@ -9,6 +10,7 @@ class MainWindow:
         # Create Tkinter root window
         self.root = tk.Tk()
         self.root.title("Cart Pendulum Simulation")
+        self.root.resizable(False, False)
 
         # Create and place LabelFrame for each section
         self.frame = {
@@ -176,11 +178,15 @@ class MainWindow:
         # Create and place Turtle canvas
         self.canvas = tk.Canvas(self.root, width=800, height=800)
         self.canvas.grid(row=0, column=4, rowspan=6)
+        self.simulator_window = SimulatorWindow(self.canvas)
 
         # Load inputs from file if it exists. If inputs are valid, apply settings.
         self.load_inputs_from_text()
         if self.verify_inputs(False):
             self.apply()
+
+        # On close, stop running of simulator_window
+        self.root.protocol('WM_DELETE_WINDOW', self.close_command)
 
     def display_forcing_settings(self):
         if self.forcing_type_variable.get() == 'Sinusoidal':
@@ -293,9 +299,7 @@ class MainWindow:
             self.button_pause.config(state='disabled')
             self.button_stop.config(state='disabled')
             MainWindow.save_inputs_to_text(self.get_settings_from_entries())
-            # self.transmitter.send(('apply', self.get_settings_from_entries()))
-            # until_button_pushed.set()
-
+            self.simulator_window.apply(self.get_settings_from_entries())
         else:
             # Generate error message
             error_message = 'Please fix the following inputs before continuing:\n'
@@ -308,30 +312,29 @@ class MainWindow:
         self.button_run.config(state='disabled')
         self.button_pause.config(state='normal')
         self.button_stop.config(state='normal')
-        # transmitter.send(('run', None))
-        # until_button_pushed.set()
+        self.simulator_window.run()
 
     def pause(self):
         self.button_apply.config(state='disabled')
         self.button_run.config(state='normal')
         self.button_pause.config(state='disabled')
         self.button_stop.config(state='normal')
-        # transmitter.send(('run', None))
-        # until_button_pushed.set()
+        self.simulator_window.pause()
 
     def stop(self):
         self.button_apply.config(state='normal')
         self.button_run.config(state='normal')
         self.button_pause.config(state='disabled')
         self.button_stop.config(state='disabled')
-        # transmitter.send(('stop', None))
-        # until_button_pushed.set()
+        self.simulator_window.stop()
 
     def get_canvas(self):
         return self.canvas
 
     def close_command(self):
-        return
+        self.simulator_window.close()
+        print('quitting')
+        self.root.quit()
 
 
 if __name__ == "__main__":
