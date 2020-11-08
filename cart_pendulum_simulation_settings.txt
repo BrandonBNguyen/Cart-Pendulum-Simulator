@@ -1,14 +1,14 @@
 Cart mass: 10.0
 Pendulum mass: 1.0
 Pendulum length: 0.4
-Initial cart position: 0.0
-Initial cart velocity: 0.0
-Initial pendulum position: 90.0
-Initial pendulum velocity: 0.0
+Cart position: 0.0
+Cart velocity: 0.0
+Pendulum position: 45.0
+Pendulum velocity: 0.0
 Forcing type: Sinusoidal
 Forcing amplitude: 400.0
 Forcing frequency: 2.0
 Forcing phase shift: 0.0
 Time step: 0.01
+Timed simulation: False
 End time: 1.0
-Timed simulation: True
