@@ -103,7 +103,7 @@ class MainWindow:
         self.forcing_type_variable.set(forcing_type_options[1])
         forcing_type_label = tk.Label(self.frame['Cart Forcing'], text="Forcing Type: ", width=16, anchor='e')
         forcing_type_select = tk.OptionMenu(self.frame['Cart Forcing'], self.forcing_type_variable,
-                                            *forcing_type_options, command=self.display_forcing_settings)
+                                            *forcing_type_options, command=lambda x: self.display_forcing_settings())
         forcing_type_select.config(width=8)
 
         # Create end time checkbox
