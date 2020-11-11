@@ -56,6 +56,7 @@ class SimulatorWindow:
             g = 9.81
             x, v, theta, omega = state
             if self.settings['Forcing type'] == 'Sinusoidal':
+                # Introduce sinusoidal forcing if option is set. Otherwise, there is no forcing on the cart.
                 amplitude = self.settings['Forcing amplitude']
                 freq = self.settings['Forcing frequency'] * 2 * math.pi
                 phase = self.settings['Forcing phase shift'] * math.pi / 180

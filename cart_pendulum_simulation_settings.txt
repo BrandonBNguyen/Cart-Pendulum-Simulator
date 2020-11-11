@@ -10,5 +10,5 @@ Forcing amplitude: 400.0
 Forcing frequency: 2.0
 Forcing phase shift: 0.0
 Time step: 0.01
-Timed simulation: False
+Timed simulation: True
 End time: 1.0
