@@ -1,4 +1,4 @@
-from DrawPendulum import DrawPendulum
+from DrawSystem import DrawSystem
 import threading
 import math
 from RK4Simulator import RK4Simulator
@@ -9,7 +9,7 @@ import time
 class SimulatorWindow:
 
     def __init__(self, canvas):
-        self.draw_canvas = DrawPendulum(canvas, 0.4)
+        self.draw_canvas = DrawSystem(canvas, 0.4)
         self.draw_canvas.draw([0, 0])
         self.end_program = False
         self.not_running = threading.Event()

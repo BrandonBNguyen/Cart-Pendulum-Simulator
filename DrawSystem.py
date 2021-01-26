@@ -3,7 +3,7 @@ import math
 from time import sleep
 
 
-class DrawPendulum:
+class DrawSystem:
 
     def __init__(self, main_window_canvas, length, scale=800):
         self.scale = scale  # Represents the number of pixel lengths per meter
@@ -88,6 +88,6 @@ class DrawPendulum:
 
 
 if __name__ == "__main__":
-    drawing = DrawPendulum(0.4)
+    drawing = DrawSystem(0.4)
     drawing.draw([0, 0])
     sleep(3)
