@@ -2,7 +2,7 @@
 
 This project was created to simulate a cart-pendulum system given specified parameters including properties of the cart and pendulum as well as the initial state of the system. The simulation is run with a GUI, allowing the user to change system or simulation parameters, pause the simulation at anytime, introduce forcing, and more. 
 
-![GUI and simulation screenshot](https://github.com/BrandonBNguyen/Cart-Pendulum-Simulator/blob/main/screenshots/showcase.PNG)
+![GUI and simulation screenshot](https://github.com/BrandonBNguyen/Cart-Pendulum-Simulator/blob/main/screenshots/showcase.gif)
 
 ## Theory
 
