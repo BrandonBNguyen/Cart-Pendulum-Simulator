@@ -1,2 +1,8 @@
 
 *.pyc
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/Cart-Pendulum-Simulator.iml
+.idea/aws.xml
