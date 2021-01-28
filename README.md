@@ -56,3 +56,5 @@ The `DrawSystem` class is responsible for drawing the system based on a provided
  - Demonstrated strong understanding of numerical methods and ability to apply RK4 algorithm to a system modeled by a set of differential equations.
  - Demonstrated strong understanding of object-oriented programming and familiarity with Python.
 	 - Demonstrated understanding of classes and functions and implemented them to compartmentalize the various tasks needed to successfully perform and visualize the simulation.
+	 - Demonstrated developing graphical user interfaces with Tkinter.
+	 - Implemented multithreading to allow the GUI to be active and usable while also rendering the simulation in the adjacent window.
