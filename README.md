@@ -41,7 +41,7 @@ The `MainWindow` class is used to create the GUI that communicates with a `Simul
 
 ### SimulatorWindow Class
 
-The `SimulatorWindow` class is responsible for pausing, running, and initializing the simulation with specified parameters based on calls from the `MainWindow` instance.
+The `SimulatorWindow` class is responsible for pausing, running, and initializing the simulation with specified parameters based on calls from the `MainWindow` instance. `SimulatorWindow` uses the `RK4Simulator` class to perform calculations in getting the state of the system in the next time step and uses `DrawSystem` to draw the representation of the system to the canvas.
 
 ### RK4Simulator Class
 
